@@ -21,7 +21,9 @@
  *   輸出: ["mouse"]
  */
 function getLowStock(products) {
- 
+  return products
+    .filter(product => product.stock < 10)
+    .map(product => product.name);
 }
 
 
@@ -43,7 +45,13 @@ function getLowStock(products) {
  *   結果: [{ name: "mouse", stock: 15 }]
  */
 function updateStock(products, updates) {
-  
+   return products.map(product => {
+    if (updates[product.name] !== undefined) {
+      return { ...product, stock: updates[product.name] };
+    } else {
+      return { ...product };
+    }
+  });
 }
 
 
