@@ -44,11 +44,14 @@ http.createServer((req, res) => {
 
   // Switch根據不同路由要寫的部分
 
+switch(url) {
+    case '/':
+      answer = 'index.ejs';
+      break;
+    case '/calculator':
+      answer = 'index2.ejs';
 
-
-
-
-  
+  }
 
   // ==========================================
   // 步驟 2: 判斷文件類型（提取副檔名）
